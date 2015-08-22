@@ -14,4 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require angular
+//= require traceur-runtime
+//= require system.js
+//= require store.js
 //= require_tree .
