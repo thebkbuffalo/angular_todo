@@ -1,0 +1,41 @@
+<!-- <p id="notice"><%= notice %></p>
+
+<h1>Listing Todos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @todos.each do |todo| %>
+      <tr>
+        <td><%= link_to 'Show', todo %></td>
+        <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
+        <td><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Todo', new_todo_path %> -->
+
+
+
+<todo-app></todo-app>
+<footer class="info">
+	<p>Double-click to edit a todo</p>
+	<p>
+		Created by <a href="http://github.com/samccone">Sam Saccone</a>
+		using <a href="http://angular.io">Angular2</a>
+	</p>
+	<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+</footer>
+<script>
+	System.paths['node-uuid'] = 'node_modules/node-uuid/uuid.js';
+	System.import('app');
+</script>
