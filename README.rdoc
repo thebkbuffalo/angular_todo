@@ -1,28 +1,50 @@
-== README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Angular Questions
 
-Things you may want to cover:
+#### Few ways to improve AngularJS app
+* Minimize / Avoid Watchers
+** are what essentially update the app when the model is changed/updated
+* Avoid ng-repeat
+** use infinite scrolling or pagination instead
+* Use Bind once when possible
+** Basically this ditches the bind once the change is rendered...helps speed
+* Use $watchCollection instead of $watch (with a third paramater)
+** this is just faster
+* Avoid repeated filters and cache whenever possible
+** this is just smart for speed
+* Use console.time to benchmark functions
 
-* Ruby version
+#### What does Data Binding do?
+* Data Binding is what establishes a connection between the view and the model.  Basically what this does is when the model is changed the view will reflect said changes automatically.  It's pretty tight.
 
-* System dependencies
+#### Object components in ng? What do they do?  Name one and explain what it does.
+* Object Components in angular are basically the same as built in functions with Rails.  They're prebuilt in functions you can call using angular.whatever.  An example of one is angular.forEach which automatically creates for each loop on the object.  This can return either an object or an array depending on what and how you specify.
 
-* Configuration
+#### What are Provider components in ng?
+* Provider Components seems to be the same as jquery libraries you would bring in to a rails app.  Also seems like they could be compared to gems.  Prepackaged bits of code to do something.
 
-* Database creation
+#### What would ngAria be useful for?
+* ngAria would be useful for making our application more accessible to users with disabilities.  ngAria provides shortcuts for using ARIA compononents.
 
-* Database initialization
+#### What would this piece of code do?  angular.fromJSON(json);
+* This piece of code deserializes a JSON string. Basically this is the same as parsing json in ruby.  When the data is stored it's a string, which is serializing JSON.  When it's pulled back in you can deserialize it into JSON format.
 
-* How to run the test suite
+#### What does $animate do?
+* $animate provides easy animation hooks.  Common directives such as ngRepeat, ngView, ngSwitch, etc... You can also use $animate to designate custom animation directives. When trigered during directives these $animation functions will trigger CSS3 changes and animations or JS callback animations.
 
-* Services (job queues, cache servers, search engines, etc.)
+#### What would angular fabulous forms-ng-fab-form help us do?
+* In a nuthsell, fabulous forms-ng-fab-form will help us with what form-for does.  It's a default but very configurable behavior helper for your forms.  This is so you can keep forms dry, and fast.
 
-* Deployment instructions
+#### What is the difference btwn Directives and Services
+* Services are mainly a way to communicate btwn controllers.  You can inject one service into another if need be.  Primarily services are used as a way to access data stores and are sometimes used to wrap Angular API's such as ngResource.  (hint hint, we'll probably use this)
+* Directives are used for creating widgets and wrapping existing such as jquery plugins.  The main reason you would wrap a plugin is to create an association with angular for databinding.  Directives also do more for the front end in terms of DOM manipulation.
+* In short Services are for the back end and are more like Rails modules or helpers.  Directives are more for the views in rendering/databinding/DOM manipulation.
 
-* ...
+#### What is Dependency Injection?
+* With DI, you can use it when defining components or when providing run and config blocks for a module.  Basically this is Angular's awesome way of saying you're going to include components or modules by injecting them where you need them.  These can be injected into any "service", or "value".  The run method accepts a function, which can be injected with "service", "value" and "constant" components as dependencies. Note that you cannot inject "providers" into run blocks.  The config method accepts a function, which can be injected with "provider" and "constant" components as dependencies. Note that you cannot inject "service" or "value" components into configuration.
 
+#### What is a promise in terms of Angular?
+* $q. this is how you rock promises in Angular.  Promises in angular are services that help us run asynchronous funcitons and use their return values when done processing.  $q can be used in two fashions --- one which is more similar to Kris Kowal's Q or jQuery's Deferred implementations, and the other which resembles ES6 promises to some degree.
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+#### What would this service do $interpolate(text[, mustHaveExpression])?
+* This compiles a string with markup into an interpolation function.  This service is used for the HTML $compile service for databinding.  Basically this is a way of passing some particular markup style to text via HTML data binding so if something is changed in the model and the view needs to reflect, blammo.  WOrks.  Can also be used with allOrNothing which basically says either all of the text has been properly effected or not at all.  this is good for interpolating URLs.  This is pretty similar to hash rockets in Rails with ERB.
