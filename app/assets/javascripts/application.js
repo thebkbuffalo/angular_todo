@@ -15,7 +15,8 @@
 //= require turbolinks
 //= require angular
 //= require traceur-runtime
-//= require system.js
-//= require store.js
+//= require system
+//= require store
 //= require es6-module-loader
+//= app
 //= require_tree .
