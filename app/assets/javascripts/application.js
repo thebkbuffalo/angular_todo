@@ -17,4 +17,5 @@
 //= require traceur-runtime
 //= require system.js
 //= require store.js
+//= require es6-module-loader
 //= require_tree .
