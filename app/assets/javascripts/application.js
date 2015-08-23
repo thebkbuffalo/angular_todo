@@ -13,9 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-
+//= require es6-module-loader
 //= require traceur-runtime
 //= require system
 //= require store
-//= require es6-module-loader
+
 //= require_tree .
